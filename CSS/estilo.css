@@ -5,11 +5,11 @@
 }
 
 /* GRID  */
-.contenedor{
+.contenedor {
     width: 100%;
     display: grid;
 
-    grid-template-areas: 
+    grid-template-areas:
         "header     header      header"
         "productos  productos   productos"
         "eventos    eventos     eventos"
@@ -19,37 +19,75 @@
 }
 
 /* HEADER*/
-.contenedor .header{
+.contenedor .header {
+    
     grid-area: header;
 
-    background: #333;
+    /* color */
+    background: #232526;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #414345, #232526);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #414345, #232526);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     height: 65px;
-    position:sticky ;
+    position: sticky;
     top: 0px;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: space-between;
+    z-index: 100;
 }
 
 /* LOGO */
 
-.contenedor .header .logo{
-    text-align: center;
+.contenedor .header .logo {
+    margin: 0px;
+padding: 0px;   
+    background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    animation: bounce; 
+  animation-duration: 2.5s; 
+    
+    /* border: solid 1px red; */
+
 }
-.contenedor .header .logo h1 a{
-    text-decoration: none;
-    color: #fff;
+
+.contenedor .header .logo p:hover{
+    animation: pulse; 
+    animation-duration: 2s;
 }
-.contenedor .header .logo p{
-    color: #4CAF50;
+
+
+
+
+.contenedor .header .logo p ,
+.contenedor .header .logo a {
+margin: 0px;
+padding: 0px;    
+    /* border: solid 1px red; */
+
 }
+
+
 
 /* MENU */
 
-.contenedor .header .menu a{
-    padding: 8px ;
+.contenedor .header .menu a {
+    padding: 8px;
     text-decoration: none;
-    color: #fff;   
+
+    color: #fff;
+
 }
 
 .contenedor .header .menu ul {
@@ -60,57 +98,62 @@
     float: left;
 }
 
-header nav li a:hover{
-    background-color: black;
-    border-bottom: solid 5px #4CAF50;
+header nav li a:hover {
+
+    margin-left: 10px;
+    border-radius: 10px;
+    border-bottom: solid 5px #fff;
 }
 
-li .active{
-    background-color: #4CAF50;
+li .active {
+    margin-left: 10px;
+    background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+    margin-left: 10px;
+    border-radius: 10px;
 }
-
 
 /* PRODUCTOS */
-.contenedor .productos{
+.contenedor .productos {
     grid-area: productos;
     display: flex;
     flex-wrap: wrap;
     padding: 5px;
     justify-content: space-evenly;
+    color: #fff;
+    text-align: center;
 }
 
-.contenedor .productos article{
+.contenedor .productos article {
     float: left;
     width: 25%;
-    border: solid 1px black;
+    border: solid 1px #fff;
     border-radius: 5px;
     padding: 5px;
     margin: 10px;
 }
 
-.contenedor .productos article img{
+.contenedor .productos article img {
     width: 100%;
     border-radius: 10px;
 }
 
-.contenedor .productos h2{
+.contenedor .productos h2 {
     align-self: flex-start;
     width: 100%;
     text-align: center;
-    background: #333;
     color: white;
     border-radius: 5px;
 }
-.contenedor .productos h3{
+
+.contenedor .productos h3 {
     width: 100%;
     text-align: center;
-    background:  #4CAF50;
-    color: #333;
+    color: #fff;
     margin-bottom: 5px;
 }
 
 /* EVENTOS */
-.contenedor .eventos{
+.contenedor .eventos {
     grid-area: eventos;
     display: flex;
     flex-wrap: wrap;
@@ -118,85 +161,108 @@ li .active{
     justify-content: space-evenly;
 }
 
-.contenedor .eventos article{
+.contenedor .eventos article {
     float: left;
     width: 40%;
-    border: solid 1px black;
+    border: solid 1px #fff;
     border-radius: 5px;
     padding: 5px;
     margin: 10px;
+    color: #fff;
+    text-align: center;
 }
 
-.contenedor .eventos article iframe{
+.contenedor .eventos article iframe {
     width: 100%;
     border-radius: 10px;
 }
 
-.contenedor .eventos article img{
+.contenedor .eventos article img {
     width: 100%;
     border-radius: 10px;
 }
 
-.contenedor .eventos h2{
+.contenedor .eventos h2 {
     align-self: flex-start;
     width: 100%;
     text-align: center;
-    background: #333;
     color: white;
     border-radius: 5px;
 }
 
-.contenedor .eventos h3{
+.contenedor .eventos h3 {
     width: 100%;
     text-align: center;
-    background:  #4CAF50;
-    color: #333;
+    color: #fff;
     margin-bottom: 5px;
 }
 
 /* FOOTER */
-.contenedor .footer{
+.contenedor .footer {
     grid-area: footer;
     height: 100px;
-    background: #333;
-    height: 65px;
+    /* border: solid 1px red; */
+
+    /* color */
+    background: #232526;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #414345, #232526);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #414345, #232526);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
     display: flex;
-    align-items:center;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-around;
 }
 
 /* CELULAR */
-.contenedor .footer .cel{
-color: #fff;
-} 
+.contenedor .footer .cel {
+    color: #fff;
+    text-align: center;
+    /* border: solid 1px red; */
+}
 
 /* LOGO FINAL */
-.contenedor .footer .logoFin{
+.contenedor .footer .logoFin {
+    margin: 0px;
+    padding: 0px;
     text-align: center;
-}
-.contenedor .footer .logoFin h1 a{
-    text-decoration: none;
-    color: #fff;
-}
-.contenedor .footer .logoFin p{
-    color: #4CAF50;
+    /* border: solid 1px red; */
+
+    /* gradiente logo */
+    background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
+.contenedor .footer .logoFin h1 a {
+    color: #fff;
+}
+
+
+
 /* REDES */
-.contenedor .footer .redes{  
-    width: 30%;
+.contenedor .footer .redes {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* border: solid 1px red; */
 
 }
 
-.contenedor .footer .redes a{
+.contenedor .footer .redes a {
+    padding: 0px 50px;    
     text-decoration: none;
-    color: #fff;   
+    color: #fff;
 }
 
 .contenedor .footer .redes ul {
+    margin: 0px;
+    padding: 0px;
     list-style: none;
     width: 100%;
 }
@@ -207,53 +273,64 @@ color: #fff;
     text-align: center;
 }
 
-footer div li:hover{
-    background-color: #4CAF50;
-    border-bottom: solid 0px #000;
+footer div li:hover {
+    background: linear-gradient(-60.76deg, rgb(150, 121, 255) 0%, rgb(212, 153, 234) 57.96%, rgb(238, 164, 179) 100%);
+
 }
 
 /* MENU FINAL */
-.contenedor .menuFin{
+.contenedor .menuFin {
     grid-area: menuFin;
-    background: #333;
+
+    /* border: solid 1px red; */
+
+    /* color */
+    background: #232526;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #414345, #232526);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #414345, #232526);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     height: 40px;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: space-around;
 }
 
-.contenedor .menuFin a{
+.contenedor .menuFin a {
     padding: 5px;
     text-decoration: none;
-    color: #fff;   
+    color: #fff;
 }
 
 .contenedor .menuFin ul {
+    margin: 0px;
+    padding: 0px;
     list-style: none;
 }
 
 .contenedor .menuFin li {
+    margin: 0px;
+    padding: 0px;
     float: left;
 }
 
-.menuFin li a:hover{
-    background-color: black;
-    border-bottom: solid 5px #4CAF50;
+.menuFin li a:hover {
+    border-radius: 10px;
+    border-bottom: solid 5px #fff;
 }
 
-.menuFin  li.active{
-    background-color: #4CAF50;
-    
-}
 
 /* FORMULARIO */
-.contenedor .form{
-  display: flex;
-  flex-direction: column;
-  border: solid 1px black;
+.contenedor .form {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px #fff;
+    border-radius: 25px;
 }
 
-.contenedor .form h2{
+.contenedor .form h2 {
     margin: 10px;
     align-self: flex-start;
     text-align: center;
@@ -262,36 +339,37 @@ footer div li:hover{
     border-radius: 5px;
 }
 
-.contenedor .form h3{
+.contenedor .form h3 {
     margin: 10px;
     padding: 5px;
     text-align: center;
-    background:  #4CAF50;
-    color: #333;
+    color: #fff;
     margin-bottom: 5px;
     border-radius: 5px;
 }
 
-.contenedor .form form{
+.contenedor .form form {
     width: 100%;
     text-align: center;
-    background:  #4CAF50;
-    color: #333;
+    color: #fff;
     border-radius: 5px;
 }
 
 /* CELULAR */
 @media only screen and (max-width: 767px) {
     body {
-      background-color: #555; 
-      margin: 0px;
-      padding: 0px;
+        background: #ff00cc;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #333399, #ff00cc);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #333399, #ff00cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                margin: 0px;
+        padding: 0px;
     }
-    .contenedor{
+
+    .contenedor {
         width: 100%;
         display: grid;
-    
-        grid-template-areas: 
+
+        grid-template-areas:
             "header"
             "productos"
             "eventos"
@@ -302,36 +380,37 @@ footer div li:hover{
         grid-template-columns: 100%;
     }
 
-    .contenedor .header{  
+    .contenedor .header {
         width: 100%;
-        padding: 5px;  
+        padding: 5px;
         height: 130px;
-        position:sticky ;
+        position: sticky;
         top: 0px;
         display: flex;
         flex-direction: column;
     }
-    
-.contenedor .productos article{
-    width: 100%;
-}
 
-.contenedor .eventos article{
-    width: 100%;
-}
-
-  }
-  /* TABLET */
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    body {
-      background-color: #bbb;
+    .contenedor .productos article {
+        width: 100%;
     }
 
-    .contenedor{
+    .contenedor .eventos article {
+        width: 100%;
+    }
+
+}
+
+/* TABLET */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    body {
+        background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+    }
+
+    .contenedor {
         width: 100%;
         display: grid;
-    
-        grid-template-areas: 
+
+        grid-template-areas:
             "header     header"
             "productos  productos"
             "eventos    eventos"
@@ -341,27 +420,29 @@ footer div li:hover{
 
         grid-template-columns: 50% 50%;
     }
-    
-    .contenedor .productos article{
+
+    .contenedor .productos article {
         float: left;
         width: 33.33%;
     }
 
-.contenedor .eventos article{
-    float: left;
+    .contenedor .eventos article {
+        float: left;
         width: 33.33%;
-}
-  }
-  /* ESCRITORIO */
-  @media only screen and (min-width: 1024px) {
-    body {
-      background-color: #fff; /* Blue */
     }
-    .contenedor{
+}
+
+/* ESCRITORIO */
+@media only screen and (min-width: 1024px) {
+    body {
+        background-image: linear-gradient(135.9deg, rgba(109, 25, 252, 1) 16.4%, rgba(125, 31, 165, 1) 56.1%);
+    }
+
+    .contenedor {
         width: 100%;
         display: grid;
-    
-        grid-template-areas: 
+
+        grid-template-areas:
             "header     header      header"
             "productos  productos   productos"
             "eventos    eventos     eventos"
@@ -369,6 +450,5 @@ footer div li:hover{
             "menuFin    menuFin     menuFin"
         ;
     }
-    
-  }
-  
+
+}
